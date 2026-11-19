@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作・受託｜ミックス・マスタリング・楽曲制作・GAS自動化｜吉澤俊樹</title>
+<meta name="description" content="ベーシスト／Ableton認定トレーナー吉澤俊樹によるミックス・マスタリング・楽曲制作、Google Apps Script（GAS）による業務自動化・小さなWebツール制作。">
+<style>
+  :root{--bg:#f7f5f0;--ink:#1d1d1f;--sub:#5b5b60;--line:#e2ded5;--accent:#d9480f;--accent-d:#b33a08;--card:#fff;--gas:#0f8a6a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px}
+  a{color:var(--accent)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header.hero{padding:56px 0 44px;border-bottom:1px solid var(--line)}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.08em;border:1px solid var(--ink);padding:2px 10px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(28px,6vw,40px);line-height:1.35;font-weight:800}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{margin-top:16px;color:var(--sub)}
+  .cta{display:inline-block;margin-top:24px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:10px}
+  .cta:hover{background:var(--accent-d)}
+  .back{display:inline-block;margin-top:12px;margin-left:12px;font-size:14px}
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:22px;margin-bottom:20px}
+  h2 small{display:block;font-size:12px;color:var(--accent);letter-spacing:.12em;font-weight:700}
+  .svc{display:grid;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;scroll-margin-top:20px}
+  .card h3{font-size:18px}
+  .card .price{font-size:26px;font-weight:800;color:var(--accent);margin:4px 0 8px}
+  .card .price small{font-size:13px;font-weight:500;color:var(--sub)}
+  .card p,.card li{font-size:14px;color:var(--sub)}
+  .card ul{padding-left:1.2em;margin-top:6px}
+  .card a.go{display:inline-block;margin-top:10px;font-size:14px;font-weight:700;text-decoration:none}
+  .gas h2 small{color:var(--gas)}
+  .gas .card .price{color:var(--gas)}
+  .tiers{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:12px}
+  .tier{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfaf7}
+  .tier b{display:block;font-size:15px}
+  .tier span{font-size:20px;font-weight:800;color:var(--gas)}
+  .note{font-size:13px;color:var(--sub);margin-top:14px}
+  .flow{counter-reset:s;list-style:none}
+  .flow li{counter-increment:s;padding:10px 0 10px 44px;position:relative}
+  .flow li::before{content:counter(s);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+  form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  label{display:block;font-weight:700;font-size:14px;margin:18px 0 6px}
+  label:first-child{margin-top:0}
+  label .req{color:var(--accent);font-size:12px;margin-left:6px}
+  input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff}
+  textarea{min-height:120px}
+  .hp{position:absolute;left:-9999px}
+  button{margin-top:24px;width:100%;background:var(--accent);color:#fff;border:0;font:inherit;font-weight:700;padding:15px;border-radius:10px;cursor:pointer}
+  button:disabled{opacity:.6;cursor:wait}
+  #done{display:none;background:var(--card);border:2px solid var(--accent);border-radius:14px;padding:24px}
+  #done .cta{margin-top:16px}
+  #payWrap{display:none}
+  dl.law{display:grid;grid-template-columns:9em 1fr;gap:10px 16px;font-size:14px}
+  dl.law dt{color:var(--sub)}
+  footer{padding:32px 0 48px;font-size:12px;color:var(--sub);text-align:center}
+  @media(max-width:520px){dl.law{grid-template-columns:1fr}dl.law dt{margin-top:8px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Mix / Mastering / Composition / GAS</span>
+    <h1>音づくりも、作業の自動化も、<br><em>まとめて</em>ご相談ください。</h1>
+    <p class="lead">ベーシスト／Ableton認定トレーナーの吉澤俊樹が、ミックス・マスタリング・楽曲制作と、Google Apps Script（GAS）による業務の自動化・小さなWebツール制作をお引き受けします。</p>
+    <a class="cta" href="#order">依頼・相談する</a><a class="back" href="./">音楽レッスンはこちら →</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2><small>MUSIC PRODUCTION</small>音楽制作</h2>
+    <div class="svc">
+      <div class="card" id="mastering">
+        <h3>マスタリング</h3>
+        <div class="price">6,000<small>円／1曲（デジタル・税込）</small></div>
+        <div class="price">10,000<small>円／1曲（アナログ機材を使用・税込）</small></div>
+        <p>完成した2ミックスを、配信・CD・動画に合わせた音量と質感に整えます。アナログ機材を通すと、より太く温かみのある音に仕上がります。</p>
+        <p>納品後の修正は1回3,000円（税込）です。</p>
+        <a class="go" href="#order" data-service="マスタリング（デジタル）">デジタルで依頼する →</a>　<a class="go" href="#order" data-service="マスタリング（アナログ）">アナログで依頼する →</a>
+      </div>
+      <div class="card" id="mix">
+        <h3>ミックス</h3>
+        <div class="price">20,000<small>円〜／1曲（税込・応相談）</small></div>
+        <p>パラデータ（各トラックの音源）から、バランス・音作り・空間を整えます。トラック数や内容によってお見積もりします。</p>
+        <a class="go" href="#order" data-service="ミックス">相談する →</a>
+      </div>
+      <div class="card" id="composition">
+        <h3>楽曲制作</h3>
+        <div class="price">30,000<small>円〜／1曲（税込・応相談）</small></div>
+        <p>さまざまなアーティストへの楽曲提供の経験をもとに、歌もの・BGM・ジングル・動画用の音楽などを制作します。用途・尺・編成に合わせてお見積もりします。</p>
+        <a class="go" href="#order" data-service="楽曲制作">相談する →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gas">
+  <div class="wrap">
+    <h2><small>AUTOMATION / WEB TOOLS</small>GAS・小さなWebツール制作</h2>
+    <div class="card" id="gas">
+      <h3>スプレッドシートの手作業、自動化しませんか？</h3>
+      <p>Google Apps Script（GAS）で、毎日の手作業やコピペを減らします。小さなお店・教室・個人事業の方向けです。</p>
+      <div class="tiers">
+        <div class="tier"><b>ちょっとした自動化</b><span>10,000円〜</span><p>集計・転記・定期メールなど</p></div>
+        <div class="tier"><b>フォーム＋自動返信＋管理表</b><span>30,000円〜</span><p>申し込み受付・予約・問い合わせ管理</p></div>
+        <div class="tier"><b>Webツール・決済つき</b><span>50,000円〜</span><p>申し込みページ＋決済＋管理の一式など</p></div>
+      </div>
+      <p style="margin-top:14px">制作例：レッスン申し込みページ（フォーム・自動返信メール・管理表・カード決済）、ライブ会場の曲リクエスト受付アプリ、領収書写真からの経費帳づくり など</p>
+      <a class="go" href="#order" data-service="GAS・Webツール制作">相談する →</a>
+    </div>
+    <p class="note">※料金はすべて税込の目安です。内容をうかがってからお見積もりします。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>FLOW</small>ご依頼の流れ</h2>
+    <ol class="flow">
+      <li>下のフォームから、内容を送信</li>
+      <li>マスタリング：表示される決済ボタンからお支払い（デジタル6,000円／アナログ10,000円）／それ以外：2日以内にお見積もりをメールでお送りします</li>
+      <li>お支払い確認後、作業開始。納期は事前にご相談します（マスタリングの修正は1回3,000円）</li>
+      <li>納品</li>
+    </ol>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <h2><small>ORDER</small>依頼・相談フォーム</h2>
+    <form id="form" novalidate>
+      <input type="hidden" name="kind" value="production">
+      <label>お名前<span class="req">必須</span></label>
+      <input name="name" required autocomplete="name">
+
+      <label>メールアドレス<span class="req">必須</span></label>
+      <input name="email" type="email" required autocomplete="email">
+
+      <label>サービス<span class="req">必須</span></label>
+      <select name="service" id="service" required>
+        <option>マスタリング（デジタル）</option><option>マスタリング（アナログ）</option><option>ミックス</option><option>楽曲制作</option><option>GAS・Webツール制作</option><option>その他・相談</option>
+      </select>
+
+      <label>曲数・規模</label>
+      <input name="amount" placeholder="例）2曲／トラック数24／1分のBGM／毎月の集計作業を自動化したい">
+
+      <label>素材・参考のURL（Googleドライブ、Dropbox、YouTubeなど）</label>
+      <input name="url" placeholder="https://">
+
+      <label>希望納期</label>
+      <input name="deadline" placeholder="例）12月20日まで／急ぎではない">
+
+      <label>ご予算</label>
+      <input name="budget" placeholder="例）3万円くらい／未定">
+
+      <label>内容・ご要望<span class="req">必須</span></label>
+      <textarea name="message" required placeholder="例）参考曲のような明るい音にしたい／お店の予約をスプレッドシートで管理していて、確認メールを自動で送りたい"></textarea>
+
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" id="submit">送信する</button>
+    </form>
+
+    <div id="done">
+      <h3>ご依頼を受け付けました</h3>
+      <p id="doneMsg">確認メールをお送りしました。内容を確認のうえ、2日以内にお見積もりをメールでお送りします。</p>
+      <div id="payWrap"><a class="cta" id="payLink" href="#" target="_blank" rel="noopener">マスタリングのお支払いへ（曲数を選べます）</a></div>
+      <p class="note">メールが届かない場合は、迷惑メールフォルダをご確認ください。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>LEGAL</small>特定商取引法に基づく表記</h2>
+    <dl class="law">
+      <dt>販売事業者</dt><dd>吉澤 俊樹</dd>
+      <dt>所在地・電話番号</dt><dd>請求があった場合、遅滞なく開示します</dd>
+      <dt>メールアドレス</dt><dd>toshipresents@gmail.com</dd>
+      <dt>販売価格</dt><dd>各サービスに表示（税込）。応相談のものはお見積もり額</dd>
+      <dt>商品代金以外の費用</dt><dd>マスタリングの納品後の修正は1回3,000円（税込）。インターネット接続料金・通信料金はお客様のご負担となります</dd>
+      <dt>支払方法</dt><dd>クレジットカード（Stripe）</dd>
+      <dt>支払時期</dt><dd>マスタリングはご依頼時。そのほかはお見積もりにご同意いただいた後</dd>
+      <dt>提供時期</dt><dd>お支払い確認後、事前にご相談した納期までに納品します</dd>
+      <dt>キャンセル・返金</dt><dd>作業開始前のキャンセルは全額返金します。作業開始後は、進み具合に応じてご相談のうえ対応します</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>© 吉澤 俊樹 ／ <a href="./">音楽レッスン</a></footer>
+
+<script>
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbzEVGpj5uz6_PwyfLacKUMFJK8-HxGWvDx9KuGaPgRG1gIVrERQqOJ1gVBy4rjac_69zQ/exec";
+  const form = document.getElementById("form");
+  const btn = document.getElementById("submit");
+  const svc = document.getElementById("service");
+  const PAY = {"マスタリング（デジタル）":"https://buy.stripe.com/bJe9AT2rtfV22tRgQfgYU04", "マスタリング（アナログ）":"https://buy.stripe.com/9B66oHfef38g3xVdE3gYU05"};
+  const ids = {mastering:"マスタリング（デジタル）", mix:"ミックス", composition:"楽曲制作", gas:"GAS・Webツール制作"};
+  if (ids[location.hash.slice(1)]) svc.value = ids[location.hash.slice(1)];
+  document.querySelectorAll("[data-service]").forEach(a => a.addEventListener("click", () => { svc.value = a.dataset.service; }));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    if (data.get("website")) return;
+    btn.disabled = true; btn.textContent = "送信中…";
+    try {
+      await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
+      if (PAY[data.get("service")]) {
+        document.getElementById("payLink").href = PAY[data.get("service")];
+        document.getElementById("doneMsg").textContent = "確認メールをお送りしました。下のボタンからお支払いをお願いします。お支払いを確認したら、作業開始のご連絡をします。";
+        document.getElementById("payWrap").style.display = "block";
+      }
+      form.style.display = "none";
+      document.getElementById("done").style.display = "block";
+      document.getElementById("done").scrollIntoView({ behavior: "smooth" });
+    } catch (err) {
+      btn.disabled = false; btn.textContent = "送信に失敗しました。もう一度お試しください";
+    }
+  });
+</script>
+</body>
+</html>

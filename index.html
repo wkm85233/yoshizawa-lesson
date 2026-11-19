@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吉澤俊樹 音楽レッスン｜DTM・ベース・ギター・ウクレレ・ピアノ・音楽理論・作曲</title>
+<meta name="description" content="Ableton認定トレーナー・ベーシストの吉澤俊樹によるマンツーマンの音楽レッスン。DTM・ベース・ギター・ウクレレ・ポップスピアノ・ジャズピアノ・音楽理論・作曲。オンライン・対面対応。">
+<style>
+  :root{
+    --bg:#f7f5f0; --ink:#1d1d1f; --sub:#5b5b60; --line:#e2ded5;
+    --accent:#d9480f; --accent-d:#b33a08; --card:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px}
+  a{color:var(--accent)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header.hero{padding:64px 0 48px;border-bottom:1px solid var(--line)}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.08em;border:1px solid var(--ink);padding:2px 10px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(28px,6vw,42px);line-height:1.35;font-weight:800;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{margin-top:16px;color:var(--sub)}
+  .cta{display:inline-block;margin-top:28px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:10px}
+  .cta:hover{background:var(--accent-d)}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:22px;margin-bottom:20px}
+  h2 small{display:block;font-size:12px;color:var(--accent);letter-spacing:.12em;font-weight:700}
+  .lessons{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .lesson{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;scroll-margin-top:20px}
+  .lesson h3{font-size:17px;margin-bottom:4px}
+  .lesson p{font-size:14px;color:var(--sub)}
+  .lesson a{display:inline-block;margin-top:8px;font-size:14px;font-weight:700;text-decoration:none}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tags span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:14px}
+  .plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .plan.pick{border:2px solid var(--accent)}
+  .plan h3{font-size:16px}
+  .plan .price{font-size:28px;font-weight:800;margin:6px 0}
+  .plan .price small{font-size:13px;font-weight:500;color:var(--sub)}
+  .plan p{font-size:14px;color:var(--sub)}
+  .note{font-size:13px;color:var(--sub);margin-top:14px}
+  .flow{counter-reset:s;list-style:none}
+  .flow li{counter-increment:s;padding:10px 0 10px 44px;position:relative}
+  .flow li::before{content:counter(s);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+  form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  label{display:block;font-weight:700;font-size:14px;margin:18px 0 6px}
+  label:first-child{margin-top:0}
+  label .req{color:var(--accent);font-size:12px;margin-left:6px}
+  input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff}
+  textarea{min-height:110px}
+  .hp{position:absolute;left:-9999px}
+  button{margin-top:24px;width:100%;background:var(--accent);color:#fff;border:0;font:inherit;font-weight:700;padding:15px;border-radius:10px;cursor:pointer}
+  button:disabled{opacity:.6;cursor:wait}
+  #done{display:none;background:var(--card);border:2px solid var(--accent);border-radius:14px;padding:24px}
+  #done .cta{margin-top:16px}
+  dl.law{display:grid;grid-template-columns:9em 1fr;gap:10px 16px;font-size:14px}
+  dl.law dt{color:var(--sub)}
+  footer{padding:32px 0 48px;font-size:12px;color:var(--sub);text-align:center}
+  @media(max-width:520px){dl.law{grid-template-columns:1fr}dl.law dt{margin-top:8px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Ableton Certified Trainer / Bassist</span>
+    <h1>弾きたい・作りたいを、<br><em>マンツーマン</em>で一緒にかなえる。</h1>
+    <p class="lead">Ableton認定トレーナー・ベーシストの吉澤俊樹による音楽レッスン。DTM・ベース・ギター・ウクレレ・ピアノ・音楽理論・作曲まで、あなたの目標とペースに合わせて進めます。オンライン・対面どちらも対応します。</p>
+    <a class="cta" href="#apply">レッスンを申し込む</a>
+    <p class="note" style="margin-top:14px"><a href='production'>ミックス・マスタリング・楽曲制作・GAS制作のご依頼はこちら →</a></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2><small>LESSONS</small>レッスン一覧</h2>
+    <div class="lessons">
+      <div class="lesson" id="dtm"><h3>DTM</h3><p>Ableton Live・Logic・GarageBand・Cubase・Pro Tools。曲を最後まで仕上げる力をつけます。</p><a href="#apply" data-lesson="DTM">申し込む →</a></div>
+      <div class="lesson" id="bass"><h3>ベース</h3><p>本業ベーシストが、リズムの感じ方からスラップ・ウォーキングまで教えます。</p><a href="#apply" data-lesson="ベース">申し込む →</a></div>
+      <div class="lesson" id="guitar"><h3>ギター</h3><p>コードの押さえ方やリズムの刻み方から、弾き語り・バンドで弾ける曲まで。</p><a href="#apply" data-lesson="ギター">申し込む →</a></div>
+      <div class="lesson" id="ukulele"><h3>ウクレレ</h3><p>はじめての方でも、好きな曲の弾き語りやソロ演奏を目指せます。</p><a href="#apply" data-lesson="ウクレレ">申し込む →</a></div>
+      <div class="lesson" id="pops-piano"><h3>ポップスピアノ</h3><p>コードを使って、好きな曲を自分なりのアレンジで弾けるようにします。</p><a href="#apply" data-lesson="ポップスピアノ">申し込む →</a></div>
+      <div class="lesson" id="jazz-piano"><h3>ジャズピアノ</h3><p>ボイシング・アドリブ・スタンダード曲の弾き方を、基礎から順に。</p><a href="#apply" data-lesson="ジャズピアノ">申し込む →</a></div>
+      <div class="lesson" id="theory"><h3>音楽理論</h3><p>コード進行やスケールを、実際の曲や楽器と結びつけて理解します。</p><a href="#apply" data-lesson="音楽理論">申し込む →</a></div>
+      <div class="lesson" id="composition"><h3>作曲</h3><p>メロディ・コード付け・アレンジまで。アーティストへの楽曲提供の経験をもとに教えます。</p><a href="#apply" data-lesson="作曲">申し込む →</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>PROFILE</small>講師について</h2>
+    <p>吉澤 俊樹（ヨシザワ トシキ）<br>
+    本業はベーシスト。Ableton認定トレーナー（Ableton公式サイト掲載）。音楽大学でコンピューターを使った音楽制作の授業を担当。さまざまなアーティストへの楽曲提供も行っています。島村楽器・ヤマハの講師資格（ベース・ウクレレ・DTM）を持ち、音楽教室で多くの生徒を担当。ライブやイベント、ピアノバーなどでの演奏経験も豊富です。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>PRICE</small>料金（全レッスン共通・1回60分）</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>単発レッスン</h3>
+        <div class="price">7,000<small>円</small></div>
+        <p>まずは1回試したい方、聞きたいことがはっきりしている方に。</p>
+      </div>
+      <div class="plan">
+        <h3>4回チケット</h3>
+        <div class="price">24,000<small>円</small></div>
+        <p>1回あたり6,000円。3か月以内に好きなタイミングで使えます。</p>
+      </div>
+      <div class="plan">
+        <h3>月2回の定期レッスン</h3>
+        <div class="price">12,000<small>円／月</small></div>
+        <p>毎月自動でお支払い。いつでも解約できます。</p>
+      </div>
+      <div class="plan">
+        <h3>3か月プラン（6回）</h3>
+        <div class="price">34,200<small>円</small></div>
+        <p>1回あたり5,700円（5%お得）。一括払い・4か月以内に6回受講できます。</p>
+      </div>
+      <div class="plan pick">
+        <h3>6か月プラン（12回）</h3>
+        <div class="price">64,800<small>円</small></div>
+        <p>1回あたり5,400円（10%お得）でいちばんお得。一括払い・8か月以内に12回受講できます。</p>
+      </div>
+    </div>
+    <p class="note">※オンラインはZoomで行います。対面レッスンの場所はお申し込み後にご相談します。<br>※お支払いはクレジットカード（Stripe）です。料金は税込です。<br>※3か月・6か月プランを途中でやめる場合は、未受講分を返金します（お支払い額から「受講済み回数×7,000円」と振込手数料を差し引いた額）。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>FLOW</small>お申し込みの流れ</h2>
+    <ol class="flow">
+      <li>下のフォームから、レッスン・プラン・希望日時を送信</li>
+      <li>表示される決済ボタンからお支払い（確認メールにもリンクが届きます）</li>
+      <li>24時間以内に日程確定のメールをお送りします（オンラインはZoomのURL、対面は場所をご案内）</li>
+      <li>当日、レッスン</li>
+    </ol>
+    <p class="note">ご希望の日程がどうしても合わない場合は、全額返金します。</p>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <h2><small>APPLY</small>お申し込みフォーム</h2>
+
+    <form id="form" novalidate>
+      <label>お名前<span class="req">必須</span></label>
+      <input name="name" required autocomplete="name">
+
+      <label>メールアドレス<span class="req">必須</span></label>
+      <input name="email" type="email" required autocomplete="email">
+
+      <label>レッスン<span class="req">必須</span></label>
+      <select name="lesson" id="lesson" required>
+        <option>DTM</option><option>ベース</option><option>ギター</option><option>ウクレレ</option>
+        <option>ポップスピアノ</option><option>ジャズピアノ</option><option>音楽理論</option><option>作曲</option>
+      </select>
+
+      <label>形式<span class="req">必須</span></label>
+      <select name="format" required>
+        <option>オンライン（Zoom）</option><option>対面</option>
+      </select>
+
+      <label>プラン<span class="req">必須</span></label>
+      <select name="plan" required>
+        <option value="single">単発レッスン（7,000円）</option>
+        <option value="ticket4">4回チケット（24,000円）</option>
+        <option value="monthly">月2回の定期レッスン（12,000円／月）</option>
+        <option value="plan3m">3か月プラン・6回（34,200円）</option>
+        <option value="plan6m">6か月プラン・12回（64,800円）</option>
+      </select>
+
+      <label>経験・使っている楽器やDAW</label>
+      <input name="experience" placeholder="例）ベース歴1年／Ableton Liveを使用／まったくの初心者">
+
+      <label>希望日時（第3希望まで）<span class="req">必須</span></label>
+      <textarea name="dates" required placeholder="例）&#10;第1希望：12月3日（水）20:00〜&#10;第2希望：12月5日（金）19:00〜&#10;第3希望：平日20時以降ならいつでも"></textarea>
+
+      <label>レッスンで扱いたいこと・対面の場合の希望エリア</label>
+      <textarea name="message" placeholder="例）好きな曲をコードで弾けるようになりたい。"></textarea>
+
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <button type="submit" id="submit">送信して、お支払いへ進む</button>
+    </form>
+
+    <div id="done">
+      <h3>お申し込みを受け付けました</h3>
+      <p>確認メールをお送りしました。下のボタンからお支払いをお願いします。お支払いを確認したら、日程確定のご連絡をします。</p>
+      <a class="cta" id="payLink" href="#" target="_blank" rel="noopener">お支払いへ進む</a>
+      <p class="note">メールが届かない場合は、迷惑メールフォルダをご確認ください。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><small>LEGAL</small>特定商取引法に基づく表記</h2>
+    <dl class="law">
+      <dt>販売事業者</dt><dd>吉澤 俊樹</dd>
+      <dt>所在地・電話番号</dt><dd>請求があった場合、遅滞なく開示します</dd>
+      <dt>メールアドレス</dt><dd>toshipresents@gmail.com</dd>
+      <dt>販売価格</dt><dd>各プランに表示（税込）</dd>
+      <dt>商品代金以外の費用</dt><dd>インターネット接続料金・通信料金、対面レッスンの場合の会場までの交通費はお客様のご負担となります</dd>
+      <dt>支払方法</dt><dd>クレジットカード（Stripe）</dd>
+      <dt>支払時期</dt><dd>お申し込み時。定期レッスンは毎月自動で課金されます。3か月・6か月プランはお申し込み時に一括でお支払いいただきます</dd>
+      <dt>提供時期</dt><dd>お支払い確認後、日程を調整のうえ実施します</dd>
+      <dt>キャンセル・返金</dt><dd>レッスン前日までのご連絡で日程を変更できます。日程が合わない場合は全額返金します。当日のキャンセルは1回分を消化扱いとします。定期レッスンは次回更新日の前日までに解約手続きをしてください。3か月・6か月プランを途中でやめる場合は、お支払い額から「受講済み回数×7,000円（単発料金）」と振込手数料を差し引いた額を返金します。有効期限（3か月プランは4か月、6か月プランは8か月）を過ぎた未受講分は返金できません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>© 吉澤 俊樹 Music Lesson ／ <a href='production'>ミックス・マスタリング・楽曲制作・GAS制作のご依頼はこちら</a></footer>
+
+<script>
+  // ===== 設定（ここだけ書き換えてください）=====
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbzEVGpj5uz6_PwyfLacKUMFJK8-HxGWvDx9KuGaPgRG1gIVrERQqOJ1gVBy4rjac_69zQ/exec";
+  const PAY_LINKS = {
+    single:  "https://buy.stripe.com/7sY3cvc237owc4r57xgYU06",
+    ticket4: "https://buy.stripe.com/6oU14neab9wE2tR9nNgYU0c",
+    monthly: "https://buy.stripe.com/7sY28rd6738g9WjarRgYU03",
+    plan3m:  "https://buy.stripe.com/3cIaEXgijeQY0lJbvVgYU0a",
+    plan6m:  "https://buy.stripe.com/3cI3cv8PRaAIecz0RhgYU0b",
+  };
+  // ============================================
+
+  const form = document.getElementById("form");
+  const btn = document.getElementById("submit");
+  const lessonSel = document.getElementById("lesson");
+
+  // レッスンカードの「申し込む」や、URLの #bass などからレッスンを選択済みにする
+  const ids = {dtm:"DTM", bass:"ベース", guitar:"ギター", ukulele:"ウクレレ", "pops-piano":"ポップスピアノ", "jazz-piano":"ジャズピアノ", theory:"音楽理論", composition:"作曲"};
+  const fromHash = ids[location.hash.slice(1)] || new URLSearchParams(location.search).get("lesson");
+  if (fromHash) lessonSel.value = ids[fromHash] || fromHash;
+  document.querySelectorAll("[data-lesson]").forEach(a => a.addEventListener("click", () => { lessonSel.value = a.dataset.lesson; }));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    if (data.get("website")) return; // スパム対策（ボットだけが入力する隠し欄）
+
+    btn.disabled = true;
+    btn.textContent = "送信中…";
+    try {
+      await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
+      document.getElementById("payLink").href = PAY_LINKS[data.get("plan")];
+      form.style.display = "none";
+      document.getElementById("done").style.display = "block";
+      document.getElementById("done").scrollIntoView({ behavior: "smooth" });
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "送信に失敗しました。もう一度お試しください";
+    }
+  });
+</script>
+</body>
+</html>
